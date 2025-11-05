@@ -1,8 +1,10 @@
+# config/initializers/cors.rb
+
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins '*' # Her yerden gelen isteğe izin ver (Geliştirme için)
+    origins "http://localhost:3001" # <-- EN ÖNEMLİ SATIR! Frontend'inin adresi
 
-    resource '*',
+    resource "*",
       headers: :any,
       methods: [:get, :post, :put, :patch, :delete, :options, :head]
   end
